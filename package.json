@@ -2,7 +2,7 @@
   "name": "with-typescript",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc"
@@ -13,10 +13,20 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
+    "babel-plugin-istanbul": "^6.0.0",
+    "istanbul-lib-coverage": "^3.0.0",
+    "nyc": "^15.1.0",
+    "source-map-support": "^0.5.19",
+    "ts-node": "^9.0.0",
     "typescript": "4.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "nyc": {
+    "all": true,
+    "extends": "@istanbuljs/nyc-config-typescript"
+  }
 }
